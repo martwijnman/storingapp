@@ -19,3 +19,5 @@ $statement->execute([
 ]);
 //4. Execute
 $items = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+header("Location: ../meldingen/index.php?msg=Melding opgeslagen");
