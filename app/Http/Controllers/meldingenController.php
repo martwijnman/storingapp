@@ -3,7 +3,10 @@
 //Variabelen vullen
 $attractie = $_POST['attractie'];
 $capaciteit = $_POST['capaciteit'];
+$type = $_POST['type'];
 $melder = $_POST['melder'];
+
+$more = $_POST['more'];
 
 echo $attractie . " / " . $capaciteit . " / " . $melder;
 
@@ -16,6 +19,10 @@ $query = "INSERT INTO meldingen (attractie, type) VALUES(:attractie, :type);";
 $statement->execute([
     ":attractie" => $attractie,
     ":type" => $type,
+    ":capaciteit" => $capaciteit,
+    ":melder" => $melder,
+    ":more" => $more,
+
 ]);
 //4. Execute
 $items = $statement->fetchAll(PDO::FETCH_ASSOC);
