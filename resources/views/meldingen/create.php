@@ -42,6 +42,15 @@
                 <input type="text" name="melder" id="melder" class="form-input">
             </div>
             <div class="form-group">
+                <label for="type">Type</label>
+                <select name="group" id="group">
+                    <option value="">- kies groep - </option>
+                    <option value="CEO">1CEO</option>
+                    <option value="MAG">2managment</option>
+                    <option value="AFD">3afdeling</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="more">overig</label>
                 <input name="more" type="textarea">
             </div>

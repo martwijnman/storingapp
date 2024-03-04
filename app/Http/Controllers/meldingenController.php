@@ -5,11 +5,14 @@ $attractie = $_POST['attractie'];
 $capaciteit = $_POST['capaciteit'];
 $type = $_POST['type'];
 $melder = $_POST['melder'];
-
+$group = $_POST('group');
 $more = $_POST['more'];
 
-echo $attractie . " / " . $capaciteit . " / " . $melder;
+echo $attractie . " / " . $capaciteit . " / " . $melder . "/" . $group;
 
+/*if (empty($attractie)){
+    $errors[] = "vul attactie naam is."
+}*/
 //1. Verbinding
 require_once '../../../config/conn.php';
 
@@ -21,6 +24,7 @@ $statement->execute([
     ":type" => $type,
     ":capaciteit" => $capaciteit,
     ":melder" => $melder,
+    ":group" => $group,
     ":more" => $more,
 
 ]);
