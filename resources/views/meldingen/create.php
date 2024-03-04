@@ -21,8 +21,8 @@
                 <input type="text" name="attractie" id="attractie" class="form-input">
             </div>
             <div class="form-group">
-                <label for="type">Type</label>
-                <select name="type" id="type">
+                <label for="typ">Type</label>
+                <select name="typ" id="typ">
                     <option value="">- kies type - </option>
                     <option value="A">achtbaan</option>
                     <option value="B">draaiend</option>
@@ -42,7 +42,7 @@
                 <input type="text" name="melder" id="melder" class="form-input">
             </div>
             <div class="form-group">
-                <label for="type">Type</label>
+                <label for="group">Type</label>
                 <select name="group" id="group">
                     <option value="">- kies groep - </option>
                     <option value="CEO">1CEO</option>
@@ -52,7 +52,7 @@
             </div>
             <div class="form-group">
                 <label for="more">overig</label>
-                <input name="more" type="textarea">
+                <textarea name="more" id="more" rows="4"></textarea>
             </div>
 
             <input type="submit" value="Verstuur melding">
