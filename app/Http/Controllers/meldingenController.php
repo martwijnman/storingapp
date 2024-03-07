@@ -19,17 +19,13 @@ require_once '../../../config/conn.php';
 //2. Query
 $query = "INSERT INTO meldingen (attractie, capaciteit, typ, ) VALUES(:attractie, :type);";
 //3. Prepare
+$statement = $conn->prepare($query);
 $statement->execute([
     ":attractie" => $attractie,
     ":typ" => $typ,
-    ":capaciteit" => $capaciteit,
-    ":melder" => $melder,
-    ":group" => $group,
-    ":more" => $more,
-
 ]);
-//4. Execute
+//4. Execute21
 $items = $statement->fetchAll(PDO::FETCH_ASSOC);
-ob_start();
-header("Location:http://localhost/storingapp/resources/views/meldingen/index.php?msg=Melding opgeslagen");
-exit();
+
+$path = $_SERVER['HTTP_REFERER']."#return";
+header("Location:$path?msg=Melding opgeslagen");
