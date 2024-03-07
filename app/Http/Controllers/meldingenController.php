@@ -3,12 +3,12 @@
 //Variabelen vullen
 $attractie = $_POST['attractie'];
 $capaciteit = $_POST['capaciteit'];
-$typ = $_POST['typ'];
+$type = $_POST['type'];
 $melder = $_POST['melder'];
 $group = $_POST['group'];
 $more = $_POST['more'];
 
-echo $attractie . " / " . $capaciteit . " / " . $melder . "/" . $group;
+echo $attractie . " / " . $capaciteit . " / " . $melder . "/" . $group . "/" . $more;
 
 /*if (empty($attractie)){
     $errors[] = "vul attactie naam is."
@@ -17,15 +17,18 @@ echo $attractie . " / " . $capaciteit . " / " . $melder . "/" . $group;
 require_once '../../../config/conn.php';
 
 //2. Query
-$query = "INSERT INTO meldingen (attractie, capaciteit, typ, ) VALUES(:attractie, :type);";
+$query = "INSERT INTO meldingen (attractie, type, capaciteit, melder) VALUES(:attractie, :type, :capaciteit, :melder)";
 //3. Prepare
 $statement = $conn->prepare($query);
 $statement->execute([
     ":attractie" => $attractie,
-    ":typ" => $typ,
+    ":type" => $type,
+    ":capaciteit" => $capaciteit, 
+    ":melder" => $melder, 
+ 
 ]);
 //4. Execute21
-$items = $statement->fetchAll(PDO::FETCH_ASSOC);
+
 
 $path = $_SERVER['HTTP_REFERER']."#return";
 header("Location:$path?msg=Melding opgeslagen");
