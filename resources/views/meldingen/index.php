@@ -17,8 +17,10 @@
 
         <?php if(isset($_GET['msg']))
         {
-            echo "<div class='msg'>" . $_GET['msg'] . "</div>";
-        } ?>
+            print_r($_GET['msg']);
+        } 
+
+  ?>
 
         <div style="height: 300px; background: #ededed; display: flex; justify-content: center; align-items: center; color: #666666;">(hier komen de storingsmeldingen)</div>
     </div>
